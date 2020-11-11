@@ -129,6 +129,7 @@ class WebViewActivity : Activity() {
         super.onCreate(savedInstanceState)
         webView = WebView(this)
         title = ""
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
         setContentView(webView)
         webView.settings.javaScriptEnabled = intent.getBooleanExtra(JAVASCRIPT_ENABLED, false)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
