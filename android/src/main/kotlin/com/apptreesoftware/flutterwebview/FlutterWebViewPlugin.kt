@@ -7,6 +7,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import android.webkit.*
 import io.flutter.app.FlutterActivity
 import io.flutter.plugin.common.MethodCall
