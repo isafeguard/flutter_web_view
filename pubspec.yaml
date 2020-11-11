@@ -6,7 +6,7 @@ homepage:
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.20.0"
+  flutter: ">=1.17.5"
 
 dependencies:
   flutter:
@@ -28,7 +28,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.apptreesoftware.flutterwebview.flutter_web_view
+        package: com.apptreesoftware.flutterwebview
         pluginClass: FlutterWebViewPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
