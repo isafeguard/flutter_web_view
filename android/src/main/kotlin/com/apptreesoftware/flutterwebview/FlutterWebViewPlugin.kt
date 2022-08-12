@@ -27,8 +27,16 @@ class FlutterWebViewPlugin(val activity: Activity) : MethodCallHandler {
 
         @JvmStatic
         fun registerWith(registrar: Registrar): Unit {
+            val activity = registrar.activity()
+
+            if (activity == null) {
+                // When a background flutter view tries to register the plugin, the registrar has no activity.
+                // We stop the registration process as this plugin is foreground only.
+                return
+            }
+
             channel = MethodChannel(registrar.messenger(), "plugins.apptreesoftware.com/web_view")
-            val plugin = FlutterWebViewPlugin(registrar.activity())
+            val plugin = FlutterWebViewPlugin(activity)
             channel.setMethodCallHandler(plugin)
             redirects.clear()
         }
