@@ -154,6 +154,16 @@ class WebViewActivity : Activity() {
         webView.webChromeClient = WebChromeClient()
         webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
+        // Enable JavaScript and plugins
+        webView.settings.javaScriptEnabled = true
+        webView.settings.pluginState = WebSettings.PluginState.ON
+
+        // Enable other media playback settings
+        webView.settings.allowFileAccess = true
+        webView.settings.allowContentAccess = true
+        webView.settings.domStorageEnabled = true
+        webView.settings.databaseEnabled = true
+
         webView.loadUrl(url, headers)
     }
 
