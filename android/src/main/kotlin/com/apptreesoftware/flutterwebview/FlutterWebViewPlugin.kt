@@ -141,6 +141,7 @@ class WebViewActivity : Activity() {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
         setContentView(webView)
         webView.settings.javaScriptEnabled = intent.getBooleanExtra(JAVASCRIPT_ENABLED, false)
+        webView.settings.setDomStorageEnabled(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             webView.settings.mediaPlaybackRequiresUserGesture = intent.getBooleanExtra(
                 INLINE_MEDIA_ENABLED, false)
