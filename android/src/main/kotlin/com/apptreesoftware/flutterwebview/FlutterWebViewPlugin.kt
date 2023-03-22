@@ -150,6 +150,7 @@ class WebViewActivity : Activity() {
         if (clearCookies) {
             clearCookies()
         }
+        webView.setWebChromeClient(object : WebChromeClient() {})
         webView.loadUrl(url, headers)
     }
 
