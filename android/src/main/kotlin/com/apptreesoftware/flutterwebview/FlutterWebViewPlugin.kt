@@ -151,7 +151,7 @@ class WebViewActivity : Activity() {
             clearCookies()
         }
         webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-        webView.setWebChromeClient(object : WebChromeClient() {})
+        webView.webChromeClient = WebChromeClient()
         webView.loadUrl(url, headers)
     }
 
