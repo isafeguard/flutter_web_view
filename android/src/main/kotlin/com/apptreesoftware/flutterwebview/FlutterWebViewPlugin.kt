@@ -152,7 +152,8 @@ class WebViewActivity : Activity() {
         }
         webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         webView.webChromeClient = WebChromeClient()
-        webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
+        webView.getSettings().setPluginState(WebSettings.PluginState.ON);
         webView.loadUrl(url, headers)
     }
 
